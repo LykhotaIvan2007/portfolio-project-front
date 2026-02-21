@@ -1,0 +1,50 @@
+.wrapper {
+    
+    display: flex;
+    flex-direction: column;
+    margin-top: 5rem;
+    align-items: center;
+    gap: 40px;
+}
+
+.group {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.btn {
+    padding: 12px 26px;
+    border-radius: 20px;
+
+    background: #ffffff;
+    color: #1e293b;
+
+    font-weight: 500;
+
+    border: 1px solid #e2e8f0;
+
+    transition: all 0.25s ease;
+
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    background: #f8fafc;
+}
+
+.active {
+    background: #3b82f6;
+    color: white;
+    border: none;
+
+    box-shadow: 0 8px 25px rgba(59,130,246,0.35);
+    transform: scale(1.05);
+}
+
+.active:hover {
+    background-color: #3b82f6;
+}

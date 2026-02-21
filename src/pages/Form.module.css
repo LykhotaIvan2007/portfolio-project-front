@@ -1,0 +1,54 @@
+.frmDiv{
+    min-height: 100vh;          
+    display: flex;
+    justify-content: center;    
+    align-items: center;        
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+
+  background: radial-gradient(
+      circle at 30% 30%,
+      #f3f4f6,
+      #d1d5db
+  );
+
+}
+.frm{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;                  /* расстояние между элементами */
+    padding: 30px;
+    width: 520px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.registerLink {
+  font-size: 14px;
+  color: #374151;
+  text-decoration: none;
+  font-weight: 500;
+
+  position: relative;
+  width: fit-content;
+  transition: color 0.2s ease;
+}
+
+.registerLink::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0%;
+  height: 2px;
+  background-color: #1f2937;
+  transition: width 0.25s ease;
+}
+
+.registerLink:hover {
+  color: #111827;
+}
+
+.registerLink:hover::after {
+  width: 100%;
+}
