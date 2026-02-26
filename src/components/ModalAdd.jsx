@@ -13,7 +13,7 @@ const ModalAdd = ({visibleAdd, setVisibleAdd}) => {
   return (
     <div className={rootClasses.join(' ')}>
         <div className={cl.myModalContent}>
-            <form>
+            <div>
                 <Myinput type="file" placeholder="choose a file" /> 
                 <Myinput type="text" placeholder="add name"/>
                 <Myinput type="text" placeholder="add description"/>
@@ -22,7 +22,7 @@ const ModalAdd = ({visibleAdd, setVisibleAdd}) => {
                 <Myinput type="text" placeholder="set who is not alloud to see"/>
                 <Mybutton type="submit" onClick={()=>setVisibleAdd(false)}>Cancel</Mybutton>
                 <Mybutton type="submit" onClick={()=>setVisibleAdd(false)}>Add</Mybutton>
-            </form>
+            </div>
         </div>
     </div>
     

@@ -2,25 +2,56 @@ import React from "react";
 import Mybutton from "../UI/button/Mybutton";
 import Myinput from "../UI/input/Myinput";
 import { useNavigate } from "react-router-dom";
+import { useContext, useState, useEffect } from "react";
 import cl from './Form.module.css'
 
 const Register = () => {
   const navigate = useNavigate();
+  const [nameText, setNameText] = useState("");
+  const [emailText, setEmailText] = useState("");
+  const [passwordText, setPasswordText] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
-  const nav = () => {
-    navigate("/login");
+  const send = async () => {
+    try {
+      const response = await fetch("http://localhost:8080/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          name: nameText,
+          email: emailText,
+          password: passwordText
+        })
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        setErrorMessage(data.message);
+        return;
+      }
+
+      setErrorMessage("");
+      navigate("/login");
+
+    } catch (err) {
+      console.log(err);
+      setErrorMessage("Server error");
+    }
   };
+
 
   return (
     <div className={cl.frmDiv}>
-      <form className={cl.frm}>
-        <Myinput type="password" placeholder="Enter your Username"/>    
-        <Myinput type="text" placeholder="Enter your email" /> 
-        <Myinput type="password" placeholder="Enter your password"/>
-        <Mybutton type="button" onClick={nav}>
-          Create Account
-        </Mybutton>
-      </form>
+      <div className={cl.frm}>
+        <Myinput value={nameText} onChange={(e)=>{setNameText(e.target.value)}} type="text" placeholder="Enter your Username"/>    
+        <Myinput value={emailText} onChange={(e)=>{setEmailText(e.target.value)}} type="email" placeholder="Enter your email" /> 
+        <Myinput value={passwordText} onChange={(e)=>{setPasswordText(e.target.value)}} type="password" placeholder="Enter your password"/>
+          <p>{errorMessage}</p>
+        <Mybutton type="button" onClick={()=>send(nameText, emailText, passwordText)}>Create Account</Mybutton>
+      </div>
     </div>
   );
 };

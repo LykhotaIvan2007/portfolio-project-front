@@ -16,11 +16,18 @@ function App() {
   const [isAutorized, setIsAutorized] = useState(false);
   const [isLogVisible, setIsLogVisible] = useState(false);
   const [isAddVisible, setIsAddVisible] = useState(false);
+  const [currentUserName, setCurrentUsername] = useState("");
 
   
   useEffect(()=>{
     if(localStorage.getItem('autoriz')){
       setIsAutorized(true);
+    }
+  },[]);
+
+  useEffect(()=>{
+    if(localStorage.getItem('currentUserName')){
+      setCurrentUsername(localStorage.getItem('currentUserName'));
     }
   },[]);
 
@@ -38,7 +45,9 @@ function App() {
 
     <AutorizeContext.Provider value={{
       isAutorized,
-      setIsAutorized
+      setIsAutorized,
+      currentUserName,
+      setCurrentUsername
     }}>
       <BrowserRouter>
       {(isAutorized) ? <Header visibleLogout={loggingOut} visibleAdd={adding} lg={isLogVisible} ad={isAddVisible}/> : null}

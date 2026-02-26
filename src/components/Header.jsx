@@ -7,9 +7,7 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 const Header = ({visibleLogout, visibleAdd, lg, ad}) => {
-    const {isAutorized, setIsAutorized} = useContext(AutorizeContext);
-    
-    
+    const {isAutorized, setIsAutorized, currentUserName, setCurrentUsername} = useContext(AutorizeContext);
     
     const navigate = useNavigate();
 
@@ -30,7 +28,7 @@ const Header = ({visibleLogout, visibleAdd, lg, ad}) => {
     <div className={cl.headerDiv}>
         <Mybutton onClick={()=> {navigate('/projects')}}>Projects</Mybutton>
         <div className={cl.rightBlock}>
-            <Mybutton onClick={setA}>Add document</Mybutton>
+            {(currentUserName == "Ivan Lykhota") ? <Mybutton onClick={setA}>Add document</Mybutton> : null}
             <Mybutton onClick={()=>{navigate('/home')}}>Home</Mybutton>
             <Mybutton onClick={setL}>Log out</Mybutton>
         </div>
