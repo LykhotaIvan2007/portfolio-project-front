@@ -34,6 +34,7 @@ const Home = (props) => {
           <span>Php</span>
           <span>Java</span>
           <span>Android Studio</span>
+          <span>SQL</span>
           <span>Figma</span>
         </div>
       </div>

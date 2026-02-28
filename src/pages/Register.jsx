@@ -4,6 +4,7 @@ import Myinput from "../UI/input/Myinput";
 import { useNavigate } from "react-router-dom";
 import { useContext, useState, useEffect } from "react";
 import cl from './Form.module.css'
+import { Link } from "react-router-dom";
 
 const Register = () => {
   const navigate = useNavigate();
@@ -49,6 +50,7 @@ const Register = () => {
         <Myinput value={nameText} onChange={(e)=>{setNameText(e.target.value)}} type="text" placeholder="Enter your Username"/>    
         <Myinput value={emailText} onChange={(e)=>{setEmailText(e.target.value)}} type="email" placeholder="Enter your email" /> 
         <Myinput value={passwordText} onChange={(e)=>{setPasswordText(e.target.value)}} type="password" placeholder="Enter your password"/>
+        <Link to="/login" className={cl.registerLink}>Back</Link>
           <p>{errorMessage}</p>
         <Mybutton type="button" onClick={()=>send(nameText, emailText, passwordText)}>Create Account</Mybutton>
       </div>
