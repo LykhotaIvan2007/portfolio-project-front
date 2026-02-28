@@ -17,20 +17,36 @@ const ModalAdd = ({visibleAdd, setVisibleAdd}) => {
     const [notAllowed, setNotAllowed] = useState("")
 
 
-    const handleUpload = async()=>{
-        const form = new FormData();
-        form.append('file',file);
-        form.append('name',name);
-        form.append('description', description);
-        form.append('year', year);
-        form.append('period', period);
-        form.append('category', category);
-        form.append('notAllowed', notAllowed);
-        const respone = await fetch("https://portfolio-project-back-production.up.railway.app/upload", {
-            method: "POST",
-            body: form, 
-        }).then(res=>res.json())
+    const handleUpload = async () => {
+  try {
+    const form = new FormData();
+    form.append("file", file);
+    form.append("name", name);
+    form.append("description", description);
+    form.append("year", year);
+    form.append("period", period);
+    form.append("category", category);
+    form.append("notAllowed", notAllowed);
+
+    const response = await fetch(
+      "https://portfolio-project-back-production.up.railway.app/upload",
+      {
+        method: "POST",
+        body: form,
+      }
+    );
+
+    if (!response.ok) {
+      throw new Error("Upload failed");
     }
+
+    const data = await response.json();
+    
+
+  } catch (err) {
+    console.error(err);
+  }
+};
   return (
     <div className={rootClasses.join(' ')}>
         <div className={cl.myModalContent}>

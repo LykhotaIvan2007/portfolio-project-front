@@ -27,7 +27,7 @@ const ProjectInfo = ({ yearP, periodP }) => {
   }, [currentUserName]);
 
   const filteredFiles = res.filter(
-    file => file.year == yearP && file.period == periodP
+    file => file.year === yearP && file.period === periodP
   );
 
   const groupedByCategory = filteredFiles.reduce((acc, file) => {

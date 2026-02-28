@@ -27,7 +27,7 @@ const Header = ({visibleLogout, visibleAdd, lg, ad}) => {
     <div className={cl.headerDiv}>
         <Mybutton onClick={()=> {navigate('/projects')}}>Projects</Mybutton>
         <div className={cl.rightBlock}>
-            {(currentUserName == "Ivan Lykhota") ? <Mybutton onClick={setA}>Add document</Mybutton> : null}
+            {(currentUserName === "Ivan Lykhota") ? <Mybutton onClick={setA}>Add document</Mybutton> : null}
             <Mybutton onClick={()=>{navigate('/home')}}>Home</Mybutton>
             <Mybutton onClick={setL}>Log out</Mybutton>
         </div>
