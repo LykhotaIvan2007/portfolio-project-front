@@ -1,7 +1,83 @@
-.dv{
+.dv {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+/* ===== Категория ===== */
+.categoryBlock {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 25px 30px;
+    margin-bottom: 30px;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.categoryBlock:hover {
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.categoryTitle {
+    font-size: 22px;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 20px;
+    border-left: 4px solid #3b82f6;
+    padding-left: 12px;
+}
+
+/* ===== Файлы ===== */
+.fileCard {
+    background: #f8fafc;
+    border-radius: 14px;
+    padding: 15px 18px;
+    margin-bottom: 15px;
+
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    margin-top: 3rem;
-    padding-bottom: 17rem;
+
+    transition: all 0.2s ease;
+}
+
+.fileCard:hover {
+    background: #eef2ff;
+}
+
+.fileInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+.fileName {
+    font-weight: 600;
+    color: #0f172a;
+}
+
+.fileDescription {
+    font-size: 14px;
+    color: #64748b;
+}
+
+.downloadBtn {
+    padding: 8px 16px;
+    border-radius: 12px;
+    background: #3b82f6;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.downloadBtn:hover {
+    background: #2563eb;
+}
+
+.pFirst{
+    display: grid;
+    place-items: center;
+    margin-bottom: 25rem;
 }

@@ -28,13 +28,13 @@ const Home = (props) => {
       <div className={cl.section}>
         <h2>Skills</h2>
         <div className={cl.skills}>
-          <span>Web Development</span>
-          <span>Mobile Development</span>
-          <span>Creativity</span>
-          <span>Multitasking</span>
-          <span>Effective Communication</span>
-          <span>Flexibility & Adaptability</span>
-          <span>Critical Thinking</span>
+          <span>React</span>
+          <span>Express</span>
+          <span>Java Script</span>
+          <span>Php</span>
+          <span>Java</span>
+          <span>Android Studio</span>
+          <span>Figma</span>
         </div>
       </div>
 
@@ -59,7 +59,7 @@ const Home = (props) => {
         <h2>Hobbies</h2>
         <div className={cl.badges}>
           <span>Chess</span>
-          <span>Basketball</span>
+          <span>Box</span>
         </div>
       </div>
 
