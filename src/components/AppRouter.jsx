@@ -6,32 +6,42 @@ import { useContext } from "react";
 
 
 const AppRouter = () => {
-    const {isAutorized} = useContext(AutorizeContext);
+  const { isAutorized } = useContext(AutorizeContext);
+
   return (
     <Routes>
-        {loggedRoutes.map(route => (
-            <Route
-                key={route.path}
-                path={route.path}
-                element={
-                    isAutorized
-                    ? <route.element/>
-                    : <Navigate to="/login" replace/>
-                }
-            />
-        ))}
+      {loggedRoutes.map(route => (
+        <Route
+          key={route.path}
+          path={route.path}
+          element={
+            isAutorized
+              ? <route.element />
+              : <Navigate to="/login" replace />
+          }
+        />
+      ))}
 
-        {notLoggedRoutes.map(route =>(
-            <Route
-                key={route.path}
-                path={route.path}
-                element={
-                    !isAutorized
-                    ? <route.element/>
-                    : <Navigate to="/home" replace/>
-                }
-            />
-        ))}
+      {notLoggedRoutes.map(route => (
+        <Route
+          key={route.path}
+          path={route.path}
+          element={
+            !isAutorized
+              ? <route.element />
+              : <Navigate to="/home" replace />
+          }
+        />
+      ))}
+
+      <Route
+        path="*"
+        element={
+          isAutorized
+            ? <Navigate to="/home" replace />
+            : <Navigate to="/login" replace />
+        }
+      />
     </Routes>
   );
 };
