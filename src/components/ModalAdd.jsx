@@ -29,7 +29,7 @@ const ModalAdd = ({visibleAdd, setVisibleAdd}) => {
         form.append('period', period);
         form.append('category', category);
         form.append('notAllowed', notAllowed);
-        const respone = await fetch("http://localhost:8080/upload", {
+        const respone = await fetch("https://portfolio-project-back-production.up.railway.app/upload", {
             method: "POST",
             body: form, 
         }).then(res=>res.json())

@@ -15,7 +15,7 @@ const Register = () => {
 
   const send = async () => {
     try {
-      const response = await fetch("http://localhost:8080/register", {
+      const response = await fetch("https://portfolio-project-back-production.up.railway.app/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
