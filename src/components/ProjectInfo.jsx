@@ -12,7 +12,7 @@ const ProjectInfo = ({ yearP, periodP }) => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `https://portfolio-project-back-production.up.railway.app?user_name=${currentUserName}`
+          `https://portfolio-project-back-production.up.railway.app/project?user_name=${currentUserName}`
         );
         const data = await response.json();
         setRes(data);
