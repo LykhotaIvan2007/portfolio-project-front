@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import photo from "../images/self_photo.jpg";
 import cl from "../styles/Home.module.css";
 

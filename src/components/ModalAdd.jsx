@@ -27,6 +27,10 @@ const ModalAdd = ({visibleAdd, setVisibleAdd}) => {
     form.append("period", period);
     form.append("category", category);
     form.append("notAllowed", notAllowed);
+    if (!file) {
+        alert("Please select a file");
+        return;
+    }
 
     const response = await fetch(
       "https://portfolio-project-back-production.up.railway.app/upload",
@@ -40,7 +44,7 @@ const ModalAdd = ({visibleAdd, setVisibleAdd}) => {
       throw new Error("Upload failed");
     }
 
-    const data = await response.json();
+    
     
 
   } catch (err) {
@@ -70,4 +74,3 @@ const ModalAdd = ({visibleAdd, setVisibleAdd}) => {
 export default ModalAdd;
 
 
-{/**{"ok":true,"bucket":"Files","path":"2026/3b0436ca4146f9fbd9ed4ae8af5c4419-Informatics_Report_NoStyles__1_.docx","publicUrl":"https://bkxdllgumbiggwsdidxk.supabase.co/storage/v1/object/public/Files/2026/3b0436ca4146f9fbd9ed4ae8af5c4419-Informatics_Report_NoStyles__1_.docx","mimeType":"application/vnd.openxmlformats-officedocument.wordprocessingml.document","size":37694,"originalName":"Informatics_Report_NoStyles (1).docx"} */}

@@ -3,7 +3,7 @@ import Mybutton from "../UI/button/Mybutton";
 import Myinput from "../UI/input/Myinput";
 import { Link } from "react-router-dom";
 import { AutorizeContext } from "../context/Autorization";
-import { useContext, useState, useEffect } from "react";
+import { useContext, useState } from "react";
 import cl from './Form.module.css';
 
 
