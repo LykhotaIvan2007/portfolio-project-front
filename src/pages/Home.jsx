@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import photo from "../images/self_photo.jpg";
 import cl from "../styles/Home.module.css";
-import ModalLog from "../components/ModalLog";
+
 
 const Home = (props) => {
   

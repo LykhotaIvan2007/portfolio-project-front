@@ -1,6 +1,4 @@
 import './styles/App.css';
-import Mybutton from './UI/button/Mybutton';
-import Login from './pages/Login';
 import { BrowserRouter } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { AutorizeContext } from "./context/Autorization";

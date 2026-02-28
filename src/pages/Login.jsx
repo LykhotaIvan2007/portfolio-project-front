@@ -8,7 +8,7 @@ import cl from './Form.module.css';
 
 
 const Login = () => {
-  const {isAutorized, setIsAutorized, setCurrentUsername} = useContext(AutorizeContext);
+  const {setIsAutorized, setCurrentUsername} = useContext(AutorizeContext);
   const [texteEmail, setTextEmail] = useState("");
   const [textPassword, setTextPassword] = useState("");
   const [textError, setTextError] = useState("");

@@ -5,7 +5,7 @@ import { AutorizeContext } from "../context/Autorization";
 import { useContext } from "react";
 
 const ModalLog = ({visibleLog, setVisibleLog}) => {
-    const {isAutorized, setIsAutorized, currentUserName, setCurrentUsername} = useContext(AutorizeContext);
+    const {setIsAutorized, setCurrentUsername} = useContext(AutorizeContext);
     const rootClasses = [cl.MyModal]
     if(visibleLog) {
         rootClasses.push(cl.active)

@@ -2,7 +2,7 @@ import React from "react";
 import Mybutton from "../UI/button/Mybutton";
 import Myinput from "../UI/input/Myinput";
 import { useNavigate } from "react-router-dom";
-import { useContext, useState, useEffect } from "react";
+import {  useState } from "react";
 import cl from './Form.module.css'
 import { Link } from "react-router-dom";
 

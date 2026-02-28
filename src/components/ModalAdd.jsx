@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import cl from "../styles/ModalAdd.module.css"
 import Mybutton from "../UI/button/Mybutton";
-import { AutorizeContext } from "../context/Autorization";
-import { useContext } from "react";
 import Myinput from "../UI/input/Myinput";
 
 const ModalAdd = ({visibleAdd, setVisibleAdd}) => {
@@ -11,7 +9,6 @@ const ModalAdd = ({visibleAdd, setVisibleAdd}) => {
         rootClasses.push(cl.active)
     }
     const [file, setFile] = useState(null);
-    const [responce, setResponce] = useState("");
     const [name, setName] = useState("");
     const [description ,setDescription] = useState("");
     const [category, setCategory] = useState("");
@@ -33,7 +30,6 @@ const ModalAdd = ({visibleAdd, setVisibleAdd}) => {
             method: "POST",
             body: form, 
         }).then(res=>res.json())
-        setResponce(JSON.stringify(respone));
     }
   return (
     <div className={rootClasses.join(' ')}>

@@ -6,7 +6,7 @@ import { useContext } from "react";
 
 
 const AppRouter = () => {
-    const {isAutorized, setIsAutorized} = useContext(AutorizeContext);
+    const {isAutorized} = useContext(AutorizeContext);
   return (
     <Routes>
         {loggedRoutes.map(route => (

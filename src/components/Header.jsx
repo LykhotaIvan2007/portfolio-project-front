@@ -3,11 +3,10 @@ import Mybutton from "../UI/button/Mybutton";
 import { AutorizeContext } from "../context/Autorization";
 import { useContext } from "react";
 import cl from "../styles/Header.module.css"
-import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 const Header = ({visibleLogout, visibleAdd, lg, ad}) => {
-    const {isAutorized, setIsAutorized, currentUserName, setCurrentUsername} = useContext(AutorizeContext);
+    const {currentUserName} = useContext(AutorizeContext);
     
     const navigate = useNavigate();
 
